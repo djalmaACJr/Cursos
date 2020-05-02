@@ -1,0 +1,40 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<DIV id="app">
+    <h1 v-once> com v-once este titulo não se altera... = {{ titulo }} </h1>
+    <h1> sem o v-once ele será atualizado sempre {{ titulo }} </h1>
+    <h2> {{ saudacao() }} </h2>
+    <p> <input type="text" v-on:input="alteraTitulo"> </p>
+
+    <a v-bind:href="link_kct">goooogle</a>
+    
+    <p v-html="link_completo"></p>
+    
+    
+</DIV>
+
+<script>
+    new Vue
+    (
+        {
+            el: '#app',
+            data: {
+                titulo: 'usando Vue',
+                link_kct: 'http://google.com.br',
+                link_completo: '<a href="https://www.bing.com/?cc=br">bing</a>'
+            },
+
+            methods: {
+                saudacao: function () {
+                    return "Boa semana meu caro!"
+                },
+
+                alteraTitulo(event) {
+                    this.titulo = event.target.value
+                }
+            }
+
+        }
+    )
+</script>

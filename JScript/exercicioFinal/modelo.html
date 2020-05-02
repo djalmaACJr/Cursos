@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+    <header>
+        <h1>Analizador de números</h1>
+
+    </header>
+
+
+    <section>
+
+        <div>
+            <p>Inorme o número entre 1 e 100: 
+                <input type="number" name="txtNum" id="txtNum">
+                <br>
+                <input type="button" value="Adicione" id="btnadd" onclick="addNum()">
+            </p>
+
+        </div>
+        <select name="lista" id="lista" size = 10>
+            <option value="desc">infomre os números</option>
+        </select>
+        <br>
+        <input type="button" value="Analize" id="btnAnali" onclick="analis()">
+
+        <div id="resultado">
+
+        </div>
+
+
+    </section>
+
+    <footer>
+        <p>&copy;Meu Curso  </p>
+
+    </footer>
+    <script src="scritps.js"></script>
+</body>
+</html>

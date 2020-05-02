@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+    <header>
+        <h1>Titulo da página</h1>
+
+    </header>
+
+
+    <section>
+
+        <div id="cab">
+            verificador de idade
+            <p>
+                Informe o seu ano de nascimento
+                <input type="number" value="1977" name="txtAno" id=txtAno max="2020"> 
+            </p>            
+            <p>Sexo
+                <input type="radio" name="radSex" id="mas">
+                <label for="mas">Maculino</label>
+                <input type="radio" name="radSex" id="fem">
+
+                <label for="fem">Femino</label>
+            </p>
+            <p>
+            <input type="button" value="verificar" id="btnver" onclick="verificar()">
+        </p>
+        </div>
+
+        <di id="resultado" >
+            Preecha os dados acima pra validar ....
+        </div>
+
+
+    </section>
+
+    <footer>
+        <p>&copy;Meu Curso  </p>
+
+    </footer>
+    <script src="scritps.js"></script>
+</body>
+</html>

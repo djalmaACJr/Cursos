@@ -1,0 +1,72 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>*** exercicio 1 ***</h1>
+    <p>
+        {{ contador }}
+    </p>
+    <button v-on:click="somar()" >somar 1</button>
+    <button v-on:click="subtrair" > subtrai 1</button>
+
+    <h1> *** exercicio 2 ***</h1>
+
+    <p v-on:mousemove="atualizaXY">
+        mouse {{ x }} e {{ y }}
+        <br>
+        outra sub-linha
+        <br>
+        <!-- duas FORMAS DE fazer a mesma coisa -->
+        <!--<span v-on:mousemove="parar">aqui não</span> usando uma nova função-->
+        <span v-on:mousemove.stop="">aqui não</span>  [aqui volta agora volta... ]
+         </p>
+
+    <h1>*** exercicio 3 ***</h1>
+
+    <p>
+        <button v-on:click="somar(5)" >somar 5</button>
+    </p>
+    <h1> *** exercicio 4***</h1>
+    <p>
+        <!-- para modificar o evento padrão de algo-->
+        <a v-on:click.prevent="" href="http://google.com"> Google</a>
+    </p>
+
+    
+</div>
+
+<script>
+    new Vue(
+        {
+            el: "#app",
+
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+
+            methods: {
+                somar(passo = 1) {
+                    this.contador += passo
+                },
+                
+                subtrair() {
+                    this.contador --
+                },
+
+                atualizaXY(e) {
+                    //console.log(e)
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                parar(e){
+                    e.stopPropagation()
+                }
+
+
+
+            }
+        }
+    )
+</script>

@@ -33,6 +33,18 @@
     </p>
 
     
+    <h1>*** exercicio 5 ***</h1>
+    <p> keyup
+       <input type="text" v-on:keyup="exibirAlerta"> 
+    </p>
+
+    <p> keyup.enter
+        <input type="text" v-on:keyup.enter="exibirAlerta"> 
+     </p>
+     
+     <p> keyup.enter.alt
+        <input type="text" v-on:keyup.alt="exibirAlerta"> 
+     </p>     
 </div>
 
 <script>
@@ -62,8 +74,10 @@
                 },
                 parar(e){
                     e.stopPropagation()
+                },
+                exibirAlerta() {
+                alert("alerta do teclado..");                    
                 }
-
 
 
             }

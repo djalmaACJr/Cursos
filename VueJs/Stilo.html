@@ -1,0 +1,73 @@
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<style>
+    .caixas {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .demo {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+    }
+
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+
+    .girar {
+        transform: rotate(45deg);
+    }
+</style>
+
+<div id="app">
+    <div class="caixas">
+        <div class="demo" :class="{c1: aplicarc1}" @click="aplicarc1 = !aplicarc1"></div>
+        <div class="demo" :class="{c2: aplicarc2, c1: !aplicarc2}" @click="aplicarc2= !aplicarc2"></div>
+        <div class="demo" :class="estiloc3" @click="aplicarc3 = !aplicarc3"></div>
+        <div class="demo" :class="[classCss, {girar: aplicarGirar}]"></div>
+    </div>
+    <hr>
+    qual classe css aplicar: 
+    <input type="text" v-model="classCss">
+    <br>
+    girar? 
+    <input type="checkbox" v-model="aplicarGirar">
+</div>
+
+<script>
+    new Vue(
+        {
+            el: "#app",
+            data: {
+                aplicarc1: false,
+                aplicarc2: false,
+                aplicarc3: false,
+                classCss: 'c1',
+                aplicarGirar: false
+
+            },
+            computed: {
+                estiloc3() {
+
+                    return {
+                        c1: this.aplicarc3,
+                        c3: !this.aplicarc3
+                    }
+                }
+            }
+
+        }
+    )
+</script>

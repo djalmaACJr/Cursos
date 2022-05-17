@@ -14,7 +14,7 @@ public class aulaVetor {
 		double[] vect = new double[n];
 		
 		for (int i = 0; i < vect.length; i++) {
-			System.out.println("informe o valor [" +( i+1) + "] do vetor");
+ 			System.out.println("informe o valor [" +( i+1) + "] do vetor");
 			vect[i] = sc.nextDouble();
 		}
 		
